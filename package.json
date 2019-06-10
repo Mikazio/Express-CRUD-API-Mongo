@@ -1,0 +1,30 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "Rest API CRUD for mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikazio/Express-CRUD-API-Mongo.git"
+  },
+  "keywords": [
+    "REST",
+    "API",
+    "CRUD",
+    "REST",
+    "API",
+    "Mongodb"
+  ],
+  "author": "Varin Titarat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mikazio/Express-CRUD-API-Mongo/issues"
+  },
+  "homepage": "https://github.com/Mikazio/Express-CRUD-API-Mongo#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
