@@ -2,17 +2,16 @@ Contact = require('./Model');
 
 // Handle index actions
 exports.index = function (req, res) {
-    Contact.get(function (err, test) {
+    Contact.get(function (err, cars) {
         if (err) {
             res.json({
-                status: "error",
+                status: "Ops something went wrong!",
                 message: err,
             });
         }
         res.json({
             status: "success",
-            message: "data retrieved successfully",
-            data: test
+            data: cars
         });
     });
 };
