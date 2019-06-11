@@ -11,11 +11,21 @@ var userSchema = mongoose.Schema({
     Car_Brands: String,
     Car_Colours: String,
     Car_Years: String,
-    gender: String,
-});
+    gender: String
+    },
+    {collection: 'test'}
+);
 
 // Export users model
 var User = module.exports = mongoose.model('test', userSchema);
+
 module.exports.get = function (callback, limit) {
     User.find(callback).limit(limit);
 }
+
+// module.exports.get = function (callback, limit) {
+//     User.find({}, function(err, data){
+//         console.log(data);
+//         'Succ'
+//     }).limit(10);
+// }
