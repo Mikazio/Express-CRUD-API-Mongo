@@ -18,8 +18,15 @@ exports.index = function (req, res) {
 
 //handle pagination request
 exports.paginations = async function(req, res) {
+
     try{
-        const cars = await Contact.paginate();
+        const { page, perPage} = req.query;       
+            const options = {
+            page: parseInt(page, 10) || 1,
+            limit: parseInt(perPage, 10) || 10,
+        }
+
+        const cars = await Contact.paginate({}, options);
         return res.json(cars);
     } catch(err){
         console.log(err);
