@@ -3,8 +3,13 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 
-//Use env for store data
+//Use env file
 require('dotenv').config()
+
+// Setup variable to use env data
+var port = process.env.PORT;
+var url = process.env.URL;
+var dbName = process.env.DB_NAME;
 
 // Initialize the app
 let app = express();
@@ -18,11 +23,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://'+ process.env.URL + '/' + process.env.DB_NAME);
+mongoose.connect('mongodb://'+ url + '/' + dbName);
 var db = mongoose.connection;
-
-// Setup server port
-var port = process.env.PORT;
 
 // Send message for default URL
 app.get('/', (req, res) => res.send('It alive!'));
