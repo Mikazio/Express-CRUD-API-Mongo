@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
 
+var dbCollection = process.env.DB_COLLECTION;
+var dbName = process.env.DB_NAME;
+
 // Setup schema
 var userSchema = mongoose.Schema({
     id: {
@@ -13,11 +16,11 @@ var userSchema = mongoose.Schema({
     Car_Years: String,
     gender: String
     },
-    {collection: 'test'}
+    {collection: dbCollection}
 );
 
 // Export users model
-var User = module.exports = mongoose.model('test', userSchema);
+var User = module.exports = mongoose.model(dbName, userSchema);
 
 module.exports.get = function (callback, limit) {
     User.find(callback).limit(limit);
