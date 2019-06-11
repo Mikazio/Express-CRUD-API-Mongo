@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var mongoosePaginate = require('mongoose-paginate');
 
 var dbCollection = process.env.DB_COLLECTION;
 var dbName = process.env.DB_NAME;
@@ -9,16 +10,19 @@ var userSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    first_name: String,
-    last_name: String,
-    Car_Brands: String,
-    Car_Colours: String,
-    Car_Years: String,
-    gender: String
+        first_name: String,
+        last_name: String,
+        Car_Brands: String,
+        Car_Colours: String,
+        Car_Years: String,
+        gender: String
     },
-    {collection: dbCollection}
+    {
+        collection: dbCollection
+    }
 );
 
+userSchema.plugin(mongoosePaginate);
 // Export users model
 var User = module.exports = mongoose.model(dbName, userSchema);
 

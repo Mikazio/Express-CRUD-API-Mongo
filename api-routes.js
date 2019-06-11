@@ -8,9 +8,14 @@ router.get('/', function (req, res) {
         message: 'Expose today is cars',
     });
 });
+
 var Controller = require('./Controller');
+
 router.route('/get/cars')
     .get(Controller.index)
+
+router.route('/page/cars')
+    .get(Controller.paginations)
 
 // Export API routes
 module.exports = router;

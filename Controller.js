@@ -15,3 +15,14 @@ exports.index = function (req, res) {
         });
     });
 };
+
+//handle pagination request
+exports.paginations = async function(req, res) {
+    try{
+        const cars = await Contact.paginate();
+        return res.json(cars);
+    } catch(err){
+        console.log(err);
+        return res.status(500).send(err);
+    }
+};
