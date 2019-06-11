@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
     });
 });
 var Controller = require('./Controller');
-router.route('/')
+router.route('/cars')
     .get(Controller.index)
 
 // Export API routes

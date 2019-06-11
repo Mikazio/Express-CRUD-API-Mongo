@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub');
+mongoose.connect('mongodb://localhost/');
 var db = mongoose.connection;
 
 // Setup server port
