@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
     });
 });
 
-var Controller = require('./Controller');
+var Controller = require('../Controller/Controller');
 
 router.route('/get/cars')
     .get(Controller.index)

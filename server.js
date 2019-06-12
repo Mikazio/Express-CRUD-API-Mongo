@@ -13,7 +13,7 @@ var dbName = process.env.DB_NAME;
 
 // Initialize the app
 let app = express();
-let apiRoutes = require("./api-routes")
+let apiRoutes = require("./Router/api-routes")
 
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({

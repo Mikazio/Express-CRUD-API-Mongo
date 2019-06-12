@@ -1,4 +1,4 @@
-Contact = require('./Model');
+Contact = require('../Model/Model');
 
 // Handle index actions
 exports.index = function (req, res) {
