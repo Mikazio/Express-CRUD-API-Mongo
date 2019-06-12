@@ -25,9 +25,9 @@ exports.paginations = async function(req, res) {
             page: parseInt(page, 10) || 1,
             limit: parseInt(perPage, 10) || 10,
         }
+    const cars = await Contact.paginate({}, options);
+    return res.json(cars);
 
-        const cars = await Contact.paginate({}, options);
-        return res.json(cars);
     } catch(err){
         console.log(err);
         return res.status(500).send(err);
