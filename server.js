@@ -42,3 +42,12 @@ app.use('/api', apiRoutes)
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
+
+var Model = require('./Model/Model.js');
+app.get('/pagination',function(req, res){
+    Model.find({}, function(err, data){
+        res.render('page.ejs', {
+            user : data
+        });
+    });
+});
