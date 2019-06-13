@@ -1,6 +1,0 @@
-<% var i = 0%>
-<% var limit = 10 %>
-<% var page_limits = user.length/limit %>
-<% for(var x=1; x<page_limits+1; x++) {%>
-    <a href="./api/page/cars?perPage<%= limit %>&page=<%= x %>">page <%= x %></a>
-<% } %>

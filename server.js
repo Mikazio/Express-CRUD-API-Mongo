@@ -15,10 +15,6 @@ var dbName = process.env.DB_NAME;
 let app = express();
 let apiRoutes = require("./Router/api-routes")
 
-//set view engine to ejs
-app.set('views', './View');
-app.set('view engine', 'ejs');
-
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
@@ -41,13 +37,4 @@ app.use('/api', apiRoutes)
 // Launch app to listen to specified port
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
-});
-
-var Model = require('./Model/Model.js');
-app.get('/pagination',function(req, res){
-    Model.find({}, function(err, data){
-        res.render('page.ejs', {
-            user : data
-        });
-    });
 });

@@ -20,11 +20,12 @@ exports.index = function (req, res) {
 exports.paginations = async function(req, res) {
 
     try{
-        const { page, perPage} = req.query;       
+        const { page, limit} = req.query;       
             const options = {
             page: parseInt(page, 10) || 1,
-            limit: parseInt(perPage, 10) || 10,
+            limit: parseInt(limit, 10) || 10,
         }
+ 
     const cars = await Contact.paginate({}, options);
     return res.json(cars);
 

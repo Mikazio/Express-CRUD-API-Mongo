@@ -3,8 +3,6 @@ var mongoosePaginate = require('mongoose-paginate');
 
 var dbCollection = process.env.DB_COLLECTION;
 var dbName = process.env.DB_NAME;
-
-// Setup schema
 var userSchema = mongoose.Schema({
     id: {
         type: Number,
@@ -23,7 +21,6 @@ var userSchema = mongoose.Schema({
 );
 
 userSchema.plugin(mongoosePaginate);
-// Export users model
 var User = module.exports = mongoose.model(dbName, userSchema);
 
 module.exports.get = function (callback, limit) {
