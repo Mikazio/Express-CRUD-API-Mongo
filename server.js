@@ -15,6 +15,10 @@ var dbName = process.env.DB_NAME;
 let app = express();
 let apiRoutes = require("./Router/api-routes")
 
+//set view engine to ejs
+app.set('views', './View');
+app.set('view engine', 'ejs');
+
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
@@ -27,7 +31,9 @@ mongoose.connect('mongodb://'+ url + '/' + dbName);
 var db = mongoose.connection;
 
 // Send message for default URL
-app.get('/', (req, res) => res.send('It alive!'));
+app.get('/', function (req, res) {
+    res.render('index')
+});
 
 // Use Api routes in the App
 app.use('/api', apiRoutes)
