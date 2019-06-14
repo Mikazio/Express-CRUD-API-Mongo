@@ -28,7 +28,7 @@ var db = mongoose.connection;
 
 // Send message for default URL
 app.get('/', function (req, res) {
-    res.render('index')
+    res.json('Hello!');
 });
 
 // Use Api routes in the App
