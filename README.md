@@ -9,4 +9,4 @@ The tools used by this project is
 
 4. dotenv
 
-At the moment we are ONLY make what we use. and It's get method that work ONLY!
+Now it can use all Create Read Update Delete 
