@@ -7,8 +7,4 @@ pipeline {
       }
     }
   }
-  environment {
-    PORT = '80'
-    DB_NAME = ' Note'
-  }
 }
