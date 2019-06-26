@@ -4,12 +4,10 @@ const mongoose = require('mongoose');
 
 //Use env file
 require('dotenv').config()
-
 // Setup variable to use env data
 var port = process.env.PORT;
 var url = process.env.URL;
 var dbName = process.env.DB_NAME;
-
 // create express app
 const app = express();
 
