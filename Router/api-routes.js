@@ -1,12 +1,18 @@
-// Initialize express router
-let router = require('express').Router();
-router.get('/', function (req, res) {
-    res.json({
-        status: 'Express API is still Working',
-        message: 'Expose today is cars',
-    });
-});
-var Controller = require('../Controller/Controller');
-router.get('/get/cars',Controller.index)
-router.get('/page/cars', Controller.paginations)
-module.exports = router;
+module.exports = (app) => {
+    const notes = require('../Controller/Controller.js');
+
+    // Create a new Note
+    app.post('/notes', notes.create);
+
+    // Retrieve all Notes
+    app.get('/notes', notes.findAll);
+
+    // Retrieve a single Note with noteId
+    app.get('/notes/:noteId', notes.findOne);
+
+    // Update a Note with noteId
+    app.put('/notes/:noteId', notes.update);
+
+    // Delete a Note with noteId
+    app.delete('/notes/:noteId', notes.delete);
+}
