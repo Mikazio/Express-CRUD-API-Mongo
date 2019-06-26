@@ -30,5 +30,5 @@ app.listen(port, () => {
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.json({"message": "Hello World!"});
 });
